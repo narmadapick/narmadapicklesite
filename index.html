@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Narmada Pickles</title>
+
+  <!-- Google Fonts & FontAwesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Your Main CSS -->
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <!-- Faded watermark -->
+  <div class="background-logo"></div>
+
+  <!-- HEADER -->
+ <header>
+  <div class="header-container">
+    <!-- Logo -->
+    <a href="index.html" class="logo-container">
+      <img src="assets/logo.jpeg" alt="Narmada Pickles Logo" class="logo" />
+      <span class="brand-title">NARMADA PICKLES</span>
+    </a>
+
+    <!-- Desktop nav -->
+    <ul class="nav-list">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="veg.html">Veg</a></li>
+      <li><a href="nonveg.html">Non-Veg</a></li>
+      <li><a href="podulu.html">Kaaralu/Podulu</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <!-- Actions: search, mobile menu, cart -->
+    <div class="header-actions">
+      <div class="search-wrapper">
+        <input id="search-bar" type="text" class="search-bar" placeholder="Search pickles…" autocomplete="off" />
+        <ul id="search-suggestions" class="search-suggestions"></ul>
+      </div>
+
+      <button class="menu-btn" aria-label="Toggle menu">☰ MENU</button>
+
+      <button class="cart-icon" onclick="toggleCartPanel()">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- SLIDE-IN CART PANEL -->
+  <aside id="cart-panel" class="cart-panel">
+    <div class="cart-panel-header">
+      <h2>Your Cart</h2>
+      <button id="close-cart">&times;</button>
+    </div>
+    <div id="cart-panel-items" class="cart-panel-items">
+      <p>Your cart is empty.</p>
+    </div>
+    <div class="cart-panel-footer">
+      <p id="cart-panel-total">Items: 0</p>
+      <a href="cart.html" class="btn-view-cart"><i class="fas fa-shopping-cart"></i> View Cart</a>
+    </div>
+  </aside>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1 class="hero-title">Authentic Telugu pickles,<br/>homemade by Amma</h1>
+    <a class="btn-whatsapp" href="https://wa.me/919603680098">
+      <i class="fab fa-whatsapp"></i> Order Now on WhatsApp
+    </a>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="categories" id="products">
+    <h2 class="section-title">Shop by Category</h2>
+    <div class="category-grid">
+      <a href="veg.html" class="category-card">
+        <img src="assets/veg-category.jpg" alt="Veg Pickles"/>
+        <h3>Veg Pickles</h3>
+      </a>
+      <a href="nonveg.html" class="category-card">
+        <img src="assets/nonveg-category.jpg" alt="Non-Veg Pickles"/>
+        <h3>Non-Veg Pickles</h3>
+      </a>
+      <a href="podulu.html" class="category-card">
+        <img src="assets/podulu-category.jpg" alt="Kaaralu/Podulu"/>
+        <h3>Kaaralu / Podulu</h3>
+      </a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about-us" class="about-us">
+<h2 class="section-title">About Narmada Pickles</h2>
+  <p>
+    At <strong>Narmada Pickles</strong>, we bring you the finest <em>authentic Telugu pickles</em> handcrafted in small batches using
+    traditional family recipes passed down through generations. Inspired by the taste of home-cooked goodness, our pickles are
+    fermented the old-world way—with raw mangoes, gongura leaves, red chillies, and fragrant spices—in pure, cold-pressed mustard oil.
+  </p>
+  <p>
+    Founded by Amma’s beloved recipes, Narmada Pickles is a family-run brand dedicated to natural ingredients, no artificial preservatives,
+    and 100% vegetarian (or non-veg) options. From the spicy kick of our <strong>Aavakaaya</strong> (mango pickle) to the tangy zing of
+    <strong>Gongura Prawns</strong>, every jar captures the essence of Andhra’s rich culinary heritage. Whether you’re craving a nostalgic
+    taste of home or exploring gourmet Indian condiments for the first time, our pickles elevate your meals—from rice and roti to
+    sandwiches and salads.
+  </p>
+  <ul class="about-values">
+    <li><strong>Heritage Recipes:</strong> Time-tested family formulas for authentic flavor.</li>
+    <li><strong>100% Natural:</strong> No artificial colors, flavors, or preservatives.</li>
+    <li><strong>Small-Batch Quality:</strong> Handcrafted and fermented to perfection.</li>
+    <li><strong>Fast & Fresh:</strong> Directly shipped from our kitchen to your doorstep.</li>
+  </ul>
+  <p>
+    Join thousands of happy customers who trust <strong>Narmada Pickles</strong> for premium, homemade pickles that add a touch of nostalgia
+    and spice to every bite. <a href="contact.html">Contact us</a> today or <a href="https://wa.me/919603680098">order now on WhatsApp</a>!
+  </p>
+</section>
+   
+  
+  <!-- TESTIMONIALS OR REVIEWS-->
+
+  <section id="testimonials" class="testimonials">
+  <h2 class="section-title">What Our Customers Say</h2>
+  <div class="testimonial-slides">
+    <div class="testimonial">
+     <p>“Absolutely the best pickle I’ve ever tasted! The Mango Aavakaaya has the perfect balance of tang and heat—it’s like a little jar of home.”</p>
+     <footer>— Radha, Hyderabad</footer>
+  </div>
+  <div class="testimonial">
+    <p>“Amma’s recipes really shine through. I can’t get enough of the Gongura Prawns pickle—it’s bold, spicy, and utterly delicious.”</p>
+    <footer>— Anil, Bengaluru</footer>
+  </div>
+  <div class="testimonial">
+    <p>“Fast delivery, beautifully packed, and the flavor is outstanding. My family fights over the Tomato Pickle!”</p>
+    <footer>— Priya, Chennai</footer>
+  </div>
+  <div class="testimonial">
+    <p>“From the first bite of the Amla (Usirikaya) to the last spoonful of Gongura Chicken, every jar feels handcrafted with love.”</p>
+    <footer>— Rajesh, Mumbai</footer>
+  </div>
+</section>
+
+  
+  
+  <!--FAQ-->
+
+<section id="faq" class="faq">
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <div class="faq-container">
+    <details>
+      <summary>How do you ship internationally?</summary>
+      <p>We partner with FedEx &amp; DHL for reliable door-to-door delivery worldwide. Shipping fees vary by location and weight.</p>
+    </details>
+    <details>
+      <summary>What payment methods do you accept?</summary>
+      <p>We accept Zelle (US), UPI (India), and INR bank transfers. For any issues, email <a href="mailto:narmadapickles@gmail.com">narmadapickles@gmail.com</a>.</p>
+    </details>
+    <details>
+      <summary>How long does fermentation take?</summary>
+      <p>Our pickles naturally ferment for 7–10 days in mustard oil, achieving the perfect balance of tanginess and spice.</p>
+    </details>
+    <details>
+      <summary>Do you offer wholesale or bulk pricing?</summary>
+      <p>Yes! For orders over 20 kg, please contact us at <a href="mailto:narmadapickles@gmail.com">narmadapickles@gmail.com</a> or WhatsApp +91 96036 80098.</p>
+    </details>
+  </div>
+</section>
+
+
+  <!-- OFFER, TESTIMONIALS, FAQ, CONTACT, FOOTER -->
+  <!-- …copy those sections exactly from your screenshots… -->
+
+
+<!-- contact card -->
+<section id="contact" class="contact">
+  <h2 class="section-title">Contact Us</h2>
+  <div class="contact-cards">
+    <div class="contact-card">
+      <i class="fas fa-envelope fa-2x"></i>
+      <h3>Email Us</h3>
+      <p><a href="mailto:narmadapickles@gmail.com">narmadapickles@gmail.com</a></p>
+    </div>
+    <div class="contact-card">
+      <i class="fas fa-phone-alt fa-2x"></i>
+      <h3>Call Us</h3>
+      <p><a href="tel:+919603680098">+91 96036 80098</a></p>
+    </div>
+    <div class="contact-card">
+      <i class="fab fa-whatsapp fa-2x"></i>
+      <h3>WhatsApp</h3>
+      <p><a href="https://wa.me/919603680098">Chat with us</a></p>
+    </div>
+    <div class="contact-card">
+      <i class="fab fa-instagram fa-2x"></i>
+      <h3>Instagram</h3>
+      <p><a href="https://instagram.com/yourprofile">@narmadapickles</a></p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Narmada Pickles. All rights reserved.</p>
+  </footer>
+
+  <!-- MAIN SCRIPT -->
+  <script src="script.js"></script>
+</body>
+</html>

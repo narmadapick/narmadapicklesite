@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Product – Narmada Pickles</title>
+  <!-- google fonts and fonts awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!--your main css-->
+   <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <!-- Faded watermark -->
+  <div class="background-logo"></div>
+
+  <!-- HEADER -->
+<header>
+  <div class="header-container">
+    <!-- Logo -->
+    <a href="index.html" class="logo-container">
+      <img src="assets/logo.jpeg" alt="Narmada Pickles Logo" class="logo" />
+      <span class="brand-title">NARMADA PICKLES</span>
+    </a>
+
+    <!-- Desktop nav -->
+    <ul class="nav-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="veg.html">Veg</a></li>
+      <li><a href="nonveg.html">Non-Veg</a></li>
+      <li><a href="podulu.html">Kaaralu/Podulu</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <!-- Actions: search, mobile menu, cart -->
+    <div class="header-actions">
+      <div class="search-wrapper">
+        <input id="search-bar" type="text" class="search-bar" placeholder="Search pickles…" autocomplete="off" />
+        <ul id="search-suggestions" class="search-suggestions"></ul>
+      </div>
+
+      <button class="menu-btn" aria-label="Toggle menu">☰ MENU</button>
+
+      <button class="cart-icon" onclick="toggleCartPanel()">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+  <aside id="cart-panel" class="cart-panel">
+    <div class="cart-panel-header">
+      <h2>Your Cart</h2>
+      <button id="close-cart">&times;</button>
+    </div>
+    <div id="cart-panel-items" class="cart-panel-items">
+      <p>Your cart is empty.</p>
+    </div>
+    <div class="cart-panel-footer">
+      <p id="cart-panel-total">Items: 0</p>
+      <a href="cart.html" class="btn-view-cart"><i class="fas fa-shopping-cart"></i> View Cart</a>
+    </div>
+  </aside>
+
+  <main>
+    <section class="product-detail">
+      <div class="slider-container">
+        <button class="slider-btn prev">‹</button>
+        <img id="product-image" src="" alt="Product Image"/>
+        <button class="slider-btn next">›</button>
+      </div>
+      <h1 id="detail-title" class="detail-title"></h1>
+      <p id="detail-price" class="detail-price"></p>
+      <div class="weight-buttons">
+        <button class="weight-btn selected" data-weight="500g">500 g</button>
+        <button class="weight-btn" data-weight="1kg">1 kg</button>
+      </div>
+      <div class="quantity-input">
+        <button id="qty-dec">–</button>
+        <span id="qty">1</span>
+        <button id="qty-inc">+</button>
+      </div>
+      <div class="actions">
+        <button id="add-to-cart" class="btn-add">Add to Cart</button>
+        <a id="order-whatsapp" class="btn-whatsapp" href="#">Order via WhatsApp</a>
+      </div>
+      <div id="detail-desc" class="detail-desc"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Narmada Pickles. All rights reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
