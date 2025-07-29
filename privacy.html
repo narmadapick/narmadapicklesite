@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Privacy Policy – Narmada Pickles</title>
+
+  <!-- SEO & OG tags omitted for brevity -->
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <!-- Header (same as index.html) -->
+  <!-- HEADER -->
+<header>
+  <div class="header-container">
+    <!-- Logo -->
+    <a href="index.html" class="logo-container">
+      <img src="assets/logo.png" alt="Narmada Pickles Logo" class="logo" />
+      <span class="brand-title">NARMADA PICKLES</span>
+    </a>
+
+    <!-- Desktop nav -->
+    <ul class="nav-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="veg.html">Veg</a></li>
+      <li><a href="nonveg.html">Non-Veg</a></li>
+      <li><a href="podulu.html">Kaaralu/Podulu</a></li>
+      <li><a href="privacy.html" class="active">Privacy Policy</a></li>
+    </ul>
+
+    <!-- Actions: search, mobile menu, cart -->
+    <div class="header-actions">
+
+      <button class="menu-btn" aria-label="Toggle menu">☰</button>   
+
+      <div class="search-wrapper">
+        <input id="search-bar" type="text" class="search-bar" placeholder="Search pickles…" autocomplete="off" />
+        <ul id="search-suggestions" class="search-suggestions"></ul>
+      </div>
+
+
+
+      <button class="cart-icon" onclick="toggleCartPanel()">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- SLIDE-IN CART PANEL -->
+  <aside id="cart-panel" class="cart-panel">
+    <div class="cart-panel-header">
+      <h2>Your Cart</h2>
+      <button id="close-cart">&times;</button>
+    </div>
+    <div id="cart-panel-items" class="cart-panel-items">
+      <p>Your cart is empty.</p>
+    </div>
+    <div class="cart-panel-footer">
+      <p id="cart-panel-total">Items: 0</p>
+      <a href="cart.html" class="btn-view-cart"><i class="fas fa-shopping-cart"></i> View Cart</a>
+    </div>
+  </aside>
+
+  <main class="page-content">
+    <h1>Privacy Policy</h1>
+    <p><em>Last updated: July 2025</em></p>
+
+    <h2>1. Introduction</h2>
+    <p>
+      At <strong>Narmada Pickles</strong> (“we”, “us”, “our”), protecting your privacy is paramount. This Privacy Policy explains what personal data we collect, how we use it, and your rights.
+    </p>
+
+    <h2>2. Data We Collect</h2>
+    <ul>
+      <li>
+        <strong>Contact & Account Data:</strong> Name, email, phone number when you subscribe or contact us.
+      </li>
+      <li>
+        <strong>Order & Shipping Data:</strong> Delivery address, order history.
+      </li>
+      <li>
+        <strong>Payment Data:</strong> Payment method info is collected securely by WhatsApp/payment gateway; we do not store raw card numbers.
+      </li>
+      <li>
+        <strong>Device & Usage Data:</strong> IP address, browser type, pages visited—collected via cookies and Google Analytics.
+      </li>
+    </ul>
+
+    <h2>3. How We Use Your Data</h2>
+    <ul>
+      <li>To process and fulfill your orders.</li>
+      <li>To send you updates, confirmations, and promotional offers (if you opt-in).</li>
+      <li>To improve our website, products, and customer service.</li>
+      <li>To comply with legal and tax obligations (e.g. customs paperwork).</li>
+    </ul>
+
+    <h2>4. Cookie & Tracking</h2>
+    <p>
+      We use cookies and similar technologies for site analytics, performance, and to remember your preferences. You can disable cookies via your browser settings, but some features may break.
+    </p>
+
+    <h2>5. Data Sharing & Transfers</h2>
+    <p>
+      We may share your data with:
+      <ul>
+        <li>Logistics partners (e.g. FedEx, DHL) for international shipping.</li>
+        <li>Payment processors (WhatsApp Pay, Razorpay, Stripe, etc.).</li>
+        <li>Legal or tax advisors, if required by law.</li>
+      </ul>
+      Your data may be transferred outside your country—always under secure, contractual safeguards.
+    </p>
+
+    <h2>6. Your Rights</h2>
+    <p>
+      Under GDPR, CCPA, and similar laws, you may:
+      <ul>
+        <li>Access the personal data we hold about you.</li>
+        <li>Request correction or deletion.</li>
+        <li>Object to or restrict processing.</li>
+        <li>Withdraw consent (where consent was the basis for processing).</li>
+      </ul>
+      To exercise these rights, email us at 
+      <a href="mailto:narmadapickles@gmail.com">narmadapickles@gmail.com</a>.
+    </p>
+
+    <h2>7. Data Retention</h2>
+    <p>
+      We retain your personal data only for as long as necessary to fulfill the purposes outlined above, or as required by law.
+    </p>
+
+    <h2>8. Security</h2>
+    <p>
+      We implement reasonable technical and organizational measures to protect your data—but no internet system is 100% secure.
+    </p>
+
+    <h2>9. Children’s Privacy</h2>
+    <p>
+      Our site is not directed to minors under 16. We do not knowingly collect data from children.
+    </p>
+
+    <h2>10. Changes to This Policy</h2>
+    <p>
+      We may update this policy. We’ll post a new “Last updated” date and notify you if changes are material.
+    </p>
+  </main>
+
+  <!-- Footer (same as index.html) -->
+<!-- ─── SITE FOOTER ─── -->
+<footer class="site-footer">
+  <div class="footer-container">
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="veg.html">Veg Pickles</a></li>
+        <li><a href="nonveg.html">Non-Veg Pickles</a></li>
+        <li><a href="podulu.html">Kaaralu/Podulu</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms &amp; Conditions</a></li>
+      </ul>
+    </div>
+
+    <!-- Newsletter Signup -->
+    <div class="footer-newsletter">
+      <h3>Stay Updated</h3>
+      <p>Subscribe for recipes, offers, and new pickle launches.</p>
+      <form id="newsletter-form">
+        <input
+          type="email"
+          name="email"
+          placeholder="Your email address"
+          required
+        />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <p class="footer-copy">&copy; 2025 Narmada Pickles. All rights reserved.</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

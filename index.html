@@ -3,7 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Narmada Pickles</title>
+
+   <!-- 1. SEO Title & Description -->
+  <title>Narmada Pickles — Authentic Telugu Homemade Pickles</title>
+  <meta name="description" content="Handmade Andhra pickles from Narmada Amma—Mango Aavakaaya, Gongura, Amla & more. Pure ingredients, cold-pressed mustard oil, shipped fresh to your door.">
+
+  <!-- 2. Open Graph for Link Previews -->
+  <meta property="og:title" content="Narmada Pickles — Authentic Telugu Homemade Pickles"/>
+  <meta property="og:description" content="Handmade Andhra pickles from Narmada Amma—Mango Aavakaaya, Gongura, Amla & more. Pure ingredients, cold-pressed mustard oil, shipped fresh to your door.">
+  <meta property="og:image" content="https://yourdomain.com/assets/og-image.jpg"/>
+  <meta property="og:url" content="https://narmadapickles.com/"/>
+  <meta property="og:site_name" content="Narmada Pickles"/>
+  <meta property="og:type" content="website"/>
+
+  <!-- 3. Twitter Card (optional but recommended) -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Narmada Pickles — Authentic Telugu Homemade Pickles"/>
+  <meta name="twitter:description" content="Handmade Andhra pickles from Narmada Amma—Mango Aavakaaya, Gongura, Amla & more. Pure ingredients, cold-pressed mustard oil, shipped fresh to your door.">
+  <meta name="twitter:image" content="https://yourdomain.com/assets/og-image.jpg"/>
+
+  <!-- your existing CSS/JS links… -->
+ 
 
   <!-- Google Fonts & FontAwesome -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
@@ -12,16 +32,25 @@
   <!-- Your Main CSS -->
   <link rel="stylesheet" href="styles.css"/>
 </head>
+
+
 <body>
   <!-- Faded watermark -->
   <div class="background-logo"></div>
+
+  <!-- COUNTDOWN BANNER -->
+<div id="deal-banner" class="countdown-banner">
+  <span>Summer Special!</span>
+  <span>Ends in <strong id="timer">00:00:00</strong></span>
+</div>
+
 
   <!-- HEADER -->
  <header>
   <div class="header-container">
     <!-- Logo -->
     <a href="index.html" class="logo-container">
-      <img src="assets/logo.jpeg" alt="Narmada Pickles Logo" class="logo" />
+      <img src="assets/logo.png" alt="Narmada Pickles Logo" class="logo" />
       <span class="brand-title">NARMADA PICKLES</span>
     </a>
 
@@ -31,17 +60,20 @@
       <li><a href="veg.html">Veg</a></li>
       <li><a href="nonveg.html">Non-Veg</a></li>
       <li><a href="podulu.html">Kaaralu/Podulu</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="#contact">Contact Us</a></li>
     </ul>
 
     <!-- Actions: search, mobile menu, cart -->
     <div class="header-actions">
+
+      <button class="menu-btn" aria-label="Toggle menu">☰</button>
+
       <div class="search-wrapper">
         <input id="search-bar" type="text" class="search-bar" placeholder="Search pickles…" autocomplete="off" />
         <ul id="search-suggestions" class="search-suggestions"></ul>
       </div>
 
-      <button class="menu-btn" aria-label="Toggle menu">☰ MENU</button>
+  
 
       <button class="cart-icon" onclick="toggleCartPanel()">
         <i class="fas fa-shopping-cart"></i>
@@ -93,6 +125,28 @@
       </a>
     </div>
   </section>
+
+
+  <!-- FEATURED PRODUCTS -->
+<section id="featured" class="featured">
+  <h2 class="section-title">Our Best Sellers</h2>
+  <div class="featured-slider">
+    <button class="feat-btn prev" aria-label="Previous product">‹</button>
+    <div class="feat-track">
+      <!-- Example slide: copy for 5–6 products -->
+      <a href="product.html?name=Mango%20(Aavakaaya)" class="feat-card">
+        <img src="assets/mango.jpg" alt="Mango (Aavakaaya)" loading="lazy"/>
+        <p class="feat-title">Mango (Aavakaaya)</p>
+      </a>
+      <a href="product.html?name=Tomato" class="feat-card">
+        <img src="assets/tomato.jpg" alt="Tomato Pickle" loading="lazy"/>
+        <p class="feat-title">Tomato</p>
+      </a>
+      <!-- …more cards… -->
+    </div>
+    <button class="feat-btn next" aria-label="Next product">›</button>
+  </div>
+</section>
 
   <!-- ABOUT -->
   <section id="about-us" class="about-us">
@@ -204,12 +258,56 @@
 </section>
 
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2025 Narmada Pickles. All rights reserved.</p>
-  </footer>
+<!-- ─── SITE FOOTER ─── -->
+<footer class="site-footer">
+  <div class="footer-container">
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="veg.html">Veg Pickles</a></li>
+        <li><a href="nonveg.html">Non-Veg Pickles</a></li>
+        <li><a href="podulu.html">Kaaralu/Podulu</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms &amp; Conditions</a></li>
+      </ul>
+    </div>
+
+    <!-- Newsletter Signup -->
+    <div class="footer-newsletter">
+      <h3>Stay Updated</h3>
+      <p>Subscribe for recipes, offers, and new pickle launches.</p>
+      <form id="newsletter-form">
+        <input
+          type="email"
+          name="email"
+          placeholder="Your email address"
+          required
+        />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <p class="footer-copy">&copy; 2025 Narmada Pickles. All rights reserved.</p>
+</footer>
 
   <!-- MAIN SCRIPT -->
   <script src="script.js"></script>
+
+  <!-- ─── Floating WhatsApp Chat Button ─── -->
+<div class="whatsapp-float">
+  <a
+    href="https://wa.me/919603680098"
+    target="_blank"
+    rel="noopener"
+    aria-label="Chat with us on WhatsApp"
+  >
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+
 </body>
 </html>

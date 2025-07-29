@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us | Narmada Pickles</title>
+  <meta name="description" content="Get in touch with Narmada Pickles for orders, queries, or wholesale inquiries. We're just a message away!">
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo-container">
+        <img src="assets/logo.png" alt="Narmada Pickles Logo" class="logo" />
+        <span class="brand-title">NARMADA PICKLES</span>
+      </a>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="veg.html">Veg</a></li>
+        <li><a href="nonveg.html">Non-Veg</a></li>
+        <li><a href="podulu.html">Kaaralu/Podulu</a></li>
+        <li><a href="contact" class="active">Contact Us</a></li>
+      </ul>
+      <div class="header-actions">
+        <button class="menu-btn" aria-label="Toggle menu">☰</button>
+      <div class="search-wrapper">
+        <input id="search-bar" type="text" class="search-bar" placeholder="Search pickles…" autocomplete="off" />
+        <ul id="search-suggestions" class="search-suggestions"></ul>
+      </div>        
+        <button class="cart-icon" onclick="toggleCartPanel()">
+          <i class="fas fa-shopping-cart"></i>
+          <span id="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTACT SECTION -->
+<section class="contact-page">
+  <h2 class="section-title">Contact Us</h2>
+  <div class="contact-cards">
+    <div class="contact-card">
+      <i class="fas fa-envelope fa-2x"></i>
+      <h3>Email Us</h3>
+      <p><a href="mailto:narmadapickles@gmail.com">narmadapickles@gmail.com</a></p>
+    </div>
+    <div class="contact-card">
+      <i class="fas fa-phone fa-2x"></i>
+      <h3>Call Us</h3>
+      <p><a href="tel:+919603680098">+91 96036 80098</a></p>
+    </div>
+    <div class="contact-card">
+      <i class="fab fa-whatsapp fa-2x"></i>
+      <h3>WhatsApp</h3>
+      <p><a href="https://wa.me/919603680098">Chat with us</a></p>
+    </div>
+    <div class="contact-card">
+      <i class="fab fa-instagram fa-2x"></i>
+      <h3>Instagram</h3>
+      <p><a href="https://instagram.com/narmadapickles">@narmadapickles</a></p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="veg.html">Veg Pickles</a></li>
+          <li><a href="nonveg.html">Non-Veg Pickles</a></li>
+          <li><a href="podulu.html">Kaaralu/Podulu</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+        </ul>
+      </div>
+      <div class="footer-newsletter">
+        <h3>Stay Updated</h3>
+        <p>Subscribe for recipes, offers, and new pickle launches.</p>
+        <form id="newsletter-form">
+          <input type="email" name="email" placeholder="Your email address" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <p class="footer-copy">&copy; 2025 Narmada Pickles. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

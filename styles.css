@@ -707,3 +707,584 @@ footer{background:#ffe0b2;text-align:center;padding:16px;margin-top:32px;}
 .detail-desc p {
   margin-bottom: 1rem;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* 📱 MOBILE HEADER LAYOUT */
+@media (max-width: 600px) {
+  .header-container {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+  }
+
+  /* nav-list is hidden on mobile */
+  .nav-list {
+    display: none;
+  }
+
+  /* header-actions holds search ▪ menu ▪ cart */
+  .header-actions {
+    flex: 1 1 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+  }
+
+  /* make the search bar take up the “middle” space */
+  .search-wrapper {
+    flex: 1 1 auto;
+    max-width: 180px;    /* tweak as needed */
+    margin: 0 8px;
+  }
+
+  /* menu and cart just take their own width */
+  .menu-btn,
+  .cart-icon {
+    flex: 0 0 auto;
+  }
+}
+
+
+
+
+/* ─── MINI-CART ITEM CARDS ─── */
+.cart-panel-items {
+  padding: 16px;
+}
+
+.cart-panel-items ul,
+.cart-panel-items {
+  /* remove default list styling */
+  list-style: none;
+  margin: 0;
+}
+
+.cart-panel-items li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* product name + qty + price group */
+.cart-panel-items li > span,
+.cart-panel-items li > p {
+  flex: 1;
+  margin: 0;
+  font-size: 0.94rem;
+  color: #333;
+}
+
+/* “✖” remove button styling */
+.cart-panel-items li button {
+  background: transparent;
+  border: none;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #c33;              /* red tone */
+  padding: 4px;
+  border-radius: 4px;
+  transition: background .2s;
+}
+
+.cart-panel-items li button:hover {
+  background: rgba(255,0,0,0.1);
+}
+
+/* footer alignment tweak, if needed */
+.cart-panel-footer {
+  padding: 16px;
+  text-align: center;
+}
+
+
+/* ─── FOOTER & NEWSLETTER ─── */
+.site-footer {
+  background: #ffe082;
+  color: #5d4037;
+  padding: 32px 16px;
+}
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto 16px;
+  justify-content: space-between;
+}
+.footer-links,
+.footer-newsletter {
+  flex: 1 1 280px;
+}
+.footer-links h3,
+.footer-newsletter h3 {
+  font-family: 'Cinzel', serif;
+  color: #bf360c;
+  margin-bottom: 8px;
+}
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-links li + li {
+  margin-top: 4px;
+}
+.footer-links a {
+  text-decoration: none;
+  color: #5d4037;
+  transition: color 0.2s;
+}
+.footer-links a:hover {
+  color: #388e3c;
+}
+.footer-newsletter p {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+#newsletter-form {
+  display: flex;
+  max-width: 100%;
+}
+#newsletter-form input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  font-size: 0.95rem;
+}
+#newsletter-form button {
+  padding: 8px 16px;
+  border: none;
+  background: #388e3c;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+#newsletter-form button:hover {
+  background: #2e7d32;
+}
+.footer-copy {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #5d4037;
+}
+
+/* ─── RESPONSIVE ADJUSTMENT ─── */
+@media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-links,
+  .footer-newsletter {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+  #newsletter-form {
+    flex-direction: column;
+  }
+  #newsletter-form input,
+  #newsletter-form button {
+    width: 100%;
+    border-radius: 4px;
+  }
+  #newsletter-form button {
+    margin-top: 8px;
+  }
+}
+
+
+/* ─── GENERIC PAGE CONTENT ─── */
+.page-content {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  color: #5d4037;
+  line-height: 1.6;
+}
+.page-content h1 {
+  font-family: 'Cinzel', serif;
+  color: #bf360c;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.page-content h2 {
+  color: #388e3c;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.page-content p,
+.page-content ul {
+  margin-bottom: 1rem;
+}
+.page-content ul {
+  list-style: disc inside;
+}
+.page-content a {
+  color: #388e3c;
+  text-decoration: underline;
+}
+
+/* ─── FEATURED PRODUCTS CAROUSEL ─── */
+.featured { padding:48px 16px; background:#fff8e1; text-align:center; }
+.featured .section-title { margin-bottom:24px; color:#bf360c; }
+.featured-slider { position:relative; max-width:1200px; margin:0 auto; overflow:hidden; }
+.feat-track {
+  display:flex; transition:transform .5s ease;
+}
+.feat-card {
+  flex:0 0 200px; margin:0 12px; text-decoration:none; color:inherit;
+  display:flex; flex-direction:column; align-items:center;
+}
+.feat-card img {
+  width:160px; height:160px; object-fit:cover; border-radius:8px;
+}
+.feat-title { margin-top:8px; font-weight:600; }
+.feat-btn {
+  position:absolute; top:50%; transform:translateY(-50%);
+  background:rgba(191,54,12,0.8); color:#fff; border:none;
+  width:36px; height:36px; border-radius:50%; cursor:pointer;
+}
+.prev { left:8px; } .next { right:8px; }
+.feat-btn:hover { background:#bf360c; }
+
+
+/* ─── COUNTDOWN BANNER ─── */
+.countdown-banner {
+  width:100%; background:#bf360c; color:#fff;
+  text-align:center; padding:8px 0; font-weight:600;
+}
+.countdown-banner span { margin:0 8px; }
+
+.suggestion-banner {
+  position: fixed;
+  top: 90px; /* adjust if needed below navbar */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  width: 90%;
+  max-width: 500px;
+
+  background: linear-gradient(135deg, #fff3cd, #ffeeba);
+  border-left: 6px solid #ffc107;
+  color: #856404;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  animation: fadeInSlide 0.6s ease-out;
+}
+
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.suggestion-banner.shake-loop {
+  animation: shake 0.6s ease-in-out;
+}
+
+@keyframes shake {
+  0% { transform: translate(-50%, 0); }
+  25% { transform: translate(-50%, -2px); }
+  50% { transform: translate(-50%, 2px); }
+  75% { transform: translate(-50%, -2px); }
+  100% { transform: translate(-50%, 0); }
+}
+
+/* ─── Discount suggestion banner ─── */
+.suggestion-banner {
+  background: #fff8e1;
+  border-left: 6px solid #fdd835;
+  color: #795548;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin: 1rem 0;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: fadeIn 0.4s ease-out;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.checkout-summary {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+.checkout-summary li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+.checkout-summary li strong {
+  font-size: 1.1rem;
+}
+
+
+/* ─── Floating WhatsApp Chat Button ─── */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+}
+
+.whatsapp-float .whatsapp-label {
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  white-space: nowrap;
+  margin-right: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.whatsapp-float a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: #25D366;
+  color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.whatsapp-float a i {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.whatsapp-float a:hover {
+  background-color: #1ebe5b;
+  transform: translateY(-2px);
+}
+
+/* On very small screens, hide the label */
+@media (max-width: 480px) {
+  .whatsapp-float .whatsapp-label {
+    display: none;
+  }
+  .whatsapp-float {
+    bottom: 12px;
+    right: 12px;
+  }
+  .whatsapp-float a {
+    width: 40px;
+    height: 40px;
+  }
+  .whatsapp-float a i {
+    font-size: 20px;
+  }
+}
+
+/* ─── suggestion banner ─── */
+.suggestion-banner {
+  background: #fff8e1;
+  border-left: 4px solid #ffb300;
+  color: #663c00;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 20px auto 0;
+  max-width: 500px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  animation: fadeInSlide 0.4s ease-out;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+@keyframes fadeInSlide {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Shake animation */
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
+}
+
+.suggestion-banner.shake-loop {
+  animation: shake 0.6s ease-in-out infinite;
+}
+
+/* ─── order summary card ─── */
+.order-summary {
+  background: #fffaf0;
+  border: 1px solid #fde8c6;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 500px;
+  margin: 30px auto;
+  font-family: Poppins, sans-serif;
+}
+
+.order-summary label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.order-summary textarea {
+  width: 100%;
+  height: 60px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.summary-lines { margin-bottom: 20px; }
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px dashed #eee;
+}
+.summary-line:last-child {
+  border-bottom: none;
+}
+.summary-label { color: #555; }
+.summary-value { font-weight: 600; }
+.grand-total .summary-label,
+.grand-total .summary-value {
+  font-size: 1.1em;
+  color: #2c662d;
+}
+
+.btn-whatsapp {
+  display: inline-block;
+  background: #25d366;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Make the suggestion banner centered and responsive */
+.suggestion-banner {
+  /* whatever you already have... */
+  margin: 20px auto 0;      /* 20px top, auto left/right, 0 bottom */
+  max-width: 500px;          /* don’t let it get wider than your card */
+  width: calc(100% - 32px);  /* full width minus your page padding */
+  box-sizing: border-box;    /* include that padding in the width */
+}
+
+/* Optional: give it a little less margin on very small phones */
+@media (max-width: 400px) {
+  .suggestion-banner {
+    margin: 16px auto 0;
+    width: calc(100% - 16px);
+  }
+}
+
+/* Make the suggestion banner centered and responsive */
+.suggestion-banner {
+  /* whatever you already have... */
+  margin: 20px auto 0;      /* 20px top, auto left/right, 0 bottom */
+  max-width: 500px;          /* don’t let it get wider than your card */
+  width: calc(100% - 32px);  /* full width minus your page padding */
+  box-sizing: border-box;    /* include that padding in the width */
+}
+
+/* Optional: give it a little less margin on very small phones */
+@media (max-width: 400px) {
+  .suggestion-banner {
+    margin: 16px auto 0;
+    width: calc(100% - 16px);
+  }
+}
+
+/* ─── STICKY, CENTERED & SHAKE ─── */
+
+/* 1. Make it sticky so it never scrolls out of view */
+#discount-suggestion.suggestion-banner {
+  position: sticky;
+  top: 90px;                   /* adjust if your header is taller/shorter */
+  z-index: 1000;               /* sit above everything */
+  
+  /* 2. Center it horizontally */
+  left: 50%;
+  transform: translateX(-50%);
+  
+  /* 3. Constrain width & padding */
+  box-sizing: border-box;
+  width: clamp(280px, 80%, 600px);
+  margin: 16px auto;           /* vertical space + auto‐center */
+}
+
+/* 4. Define shake keyframes */
+@keyframes shake {
+  0%, 100% { transform: translateX(-50%); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(calc(-50% + 5px)); }
+  20%, 40%, 60%, 80% { transform: translateX(calc(-50% - 5px)); }
+}
+
+/* 5. Hook up the infinite 6s‐delayed shake */
+#discount-suggestion.suggestion-banner.shake-loop {
+  animation: shake 0.6s ease-in-out both infinite;
+  animation-delay: 6s;
+}
+/* ─── UPDATED SUGGESTION BANNER COLORS ─── */
+.suggestion-banner {
+  /* lighter orange → deeper orange */
+  background: linear-gradient(135deg, #fff4e6, #ffe0b2);
+  /* bright accent border */
+  border-left: 6px solid #ff9800;
+  /* darker text for contrast */
+  color: #663c00;
+}
+
+/* keep the rest of your banner/CSS as‑is */
+@keyframes fadeInSlide {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes shake {
+  0%,100%   { transform: translateX(0); }
+  25%,75%   { transform: translateX(-5px); }
+  50%       { transform: translateX(5px); }
+}
+.suggestion-banner.shake-loop {
+  animation: shake 0.6s ease-in-out both;
+  animation-iteration-count: infinite;
+  animation-delay: 6s;
+}
