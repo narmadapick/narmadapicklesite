@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
       prices: { "500g": 10.99, "1kg": 18.99 },
       slides: ["assets/chicken.jpg", "assets/chicken-2.jpg"]
     },
-    "Gongura Chicken": {
+    "Gongura chicken": {
       img: "assets/gongurachicken.jpg",
       desc: "Discover Gongura Chicken Pickle—succulent chicken cubes cooked with tangy sorrel leaves, green chilies & garlic in mustard oil, creating a spicy, zesty non-veg Andhra specialty.",
       prices: { "500g": 11.99, "1kg": 21.99 },
@@ -292,9 +292,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function getShippingRate(weight) {
       if (weight >= 10) return 10;
-      if (weight >= 5)  return 15;
-      if (weight >= 3)  return 16;
-      return 29;
+      if (weight >= 5)  return 13;
+      if (weight >= 3)  return 17;
+      return 28;
     }
     function getSuggestedMessage(weight) {
       for (let t of [1,3,5,10]) {
@@ -384,8 +384,8 @@ document.addEventListener("DOMContentLoaded", () => {
       , 0);
 
       // 2) shipping & grand
-      const rate        = getShippingRate(totalWeight);
-      const shipping    = rate * totalWeight;
+      const rate         = getShippingRate(totalWeight);
+      const shipping     = rate * totalWeight;
       const grandTotal  = pickleTotal + shipping;
 
       // 3) update the four summary fields
@@ -393,6 +393,25 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("summary-pickle").innerText   = `$${pickleTotal.toFixed(2)}`;
       document.getElementById("summary-shipping").innerText = `$${shipping.toFixed(2)}`;
       document.getElementById("summary-grand").innerText    = `$${grandTotal.toFixed(2)}`;
+
+
+            // Apply strikethrough to shipping and grand total (if applicable)
+      const shippingEl = document.getElementById("summary-shipping");
+      const grandEl    = document.getElementById("summary-grand");
+
+      // Only apply strike if discount is active (i.e., total weight qualifies for cheaper rate)
+      const baseRate = 28;  // worst-case base shipping rate
+      const baseShipping = baseRate * totalWeight;
+      const baseGrand = pickleTotal + baseShipping;
+
+      if (shipping < baseShipping) {
+        shippingEl.innerHTML = `<s>$${baseShipping.toFixed(2)}</s> <span class="new-price">$${shipping.toFixed(2)}</span>`;
+        grandEl.innerHTML = `<s>$${baseGrand.toFixed(2)}</s> <span class="new-price">$${grandTotal.toFixed(2)}</span>`;
+      } else {
+        shippingEl.innerText = `$${shipping.toFixed(2)}`;
+        grandEl.innerText = `$${grandTotal.toFixed(2)}`;
+      }
+
 
       // 4) rebuild WhatsApp message URL
       const lines = cart.map(it=>
@@ -463,27 +482,6 @@ document.addEventListener("DOMContentLoaded", () => {
     prev?.addEventListener('click', () => slide(idx-1));
     next?.addEventListener('click', () => slide(idx+1));
     setInterval(() => slide(idx+1), 6000);
-  })();
-
-
-  // ─── 10. COUNTDOWN TIMER (deal banner) ───
-  ( () => {
-    const disp = document.getElementById('timer');
-    const end  = new Date('2025-08-01T00:00:00').getTime();
-    function tick() {
-      const now  = Date.now();
-      let   d    = Math.max(0, end - now);
-      const hrs  = String(Math.floor(d/3600000)).padStart(2,'0'); d %= 3600000;
-      const mins = String(Math.floor(d/60000)).padStart(2,'0'); d %= 60000;
-      const secs = String(Math.floor(d/1000)).padStart(2,'0');
-      disp.innerText = `${hrs}:${mins}:${secs}`;
-      if (now >= end) {
-        document.getElementById('deal-banner')?.remove();
-        clearInterval(timer);
-      }
-    }
-    const timer = setInterval(tick, 1000);
-    tick();
-  })();
+  })();;
 
 });
