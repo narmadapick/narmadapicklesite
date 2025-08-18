@@ -89,19 +89,19 @@ document.addEventListener("DOMContentLoaded", () => {
     "Chili Powder": {
       img: "assets/chillipowder.jpg",
       desc: "Add bold, fiery flavor to your cooking with our authentic Red Chilli Powder, made from sun-dried Guntur chillies. Known for their natural spice and deep color, our chilli powder is 100% pure, preservative-free, and packed fresh to deliver the perfect heat to your curries, fries, and masalas. Whether you're making biryani or daily dal, this homemade karam podi brings real Andhra-style punch to your food.",
-      prices: { "250g": 2.99, "500g": 4.99 },
+      prices: { "500g": 2.99, "1kg": 4.99 },
       slides: ["assets/chillipowder.jpg"]
     },
     "kakarakaya karam": {
       img: "assets/kakarakaya.jpg",
       desc: "Our Kakarakaya Karam is a specialty podi from Andhra cuisine, made with roasted bitter gourd (kakarakaya), lentils, spices, and red chilli. Slightly bitter, mildly spicy, and uniquely flavorful — this powder is a favorite when mixed with hot rice and ghee or served alongside idli/dosa. Made in small batches, it’s a traditional homemade spice mix with no additives or preservatives.",
-      prices: { "250g": 2.99, "500g": 4.99 },
+      prices: { "500g": 2.99, "1kg": 4.99 },
       slides: ["assets/kakarakaya.jpg"]
     },
     "Sambhar Podi": {
       img: "assets/sambhar.jpg",
       desc: "Bring the rich aroma of South India to your kitchen with our Sambar Podi, a carefully balanced blend of roasted lentils, coriander, red chillies, and spices. Perfect for making delicious, flavorful sambar at home — just add it to boiling dal and vegetables for that authentic Tamil-style taste. Our homemade sambar powder is freshly ground, free from preservatives, and full of flavor.",
-      prices: { "250g": 2.99, "500g": 4.99 },
+      prices: { "500g": 2.99, "1kg": 4.99 },
       slides: ["assets/sambhar.jpg"]
     }
   };

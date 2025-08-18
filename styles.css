@@ -1313,7 +1313,7 @@ html {
   display: inline-block;
   padding-left: 100%;
   animation: scroll-left 25s linear infinite;
-  font-size: 1.05rem;
+  font-size: 1.00rem;
   font-weight: 600;
   color: #5d4037;
 }
