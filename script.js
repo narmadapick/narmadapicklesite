@@ -106,6 +106,98 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  // new added Simple toast helper
+function showToast(text, {type="success", ms=1800} = {}) {
+  // make container once
+  let cont = document.querySelector(".toast-container");
+  if (!cont) {
+    cont = document.createElement("div");
+    cont.className = "toast-container";
+    document.body.appendChild(cont);
+  }
+
+  // toast element
+  const t = document.createElement("div");
+  t.className = "toast" + (type !== "success" ? ` ${type}` : "");
+  t.setAttribute("role", "status");
+  t.setAttribute("aria-live", "polite");
+  t.innerHTML = `
+    <span class="icon">🛒</span>
+    <span class="msg">${text}</span>
+  `;
+
+  cont.appendChild(t);
+  // show
+  requestAnimationFrame(() => t.classList.add("show"));
+
+  // dismiss on click or timer
+  const remove = () => {
+    t.classList.remove("show");
+    setTimeout(() => t.remove(), 250);
+  };
+  t.addEventListener("click", remove);
+  setTimeout(remove, ms);
+}
+
+
+//ribbon new added... Map products → ribbon text & style
+const RIBBONS = {
+  "Mango (Aavakaaya)": { text: "Summer Special", cls: "summer" },
+  "Gongura":           { text: "Mom’s Pick",     cls: "moms"   },
+  // add more here anytime:
+  // "Prawns":         { text: "Hot Pick",       cls: "hot"    },
+};
+
+// Helper to add a ribbon to any card/box for a given product name
+function addRibbon(el, name) {
+  const cfg = RIBBONS[name];
+  if (!cfg || !el) return;
+  // ensure a positioning context
+  const style = getComputedStyle(el);
+  if (style.position === "static") el.style.position = "relative";
+  // avoid duplicates
+  if (el.querySelector(".ribbon")) return;
+
+  const tag = document.createElement("span");
+  tag.className = `ribbon ${cfg.cls || ""}`;
+  tag.textContent = cfg.text;
+  el.appendChild(tag);
+}
+
+/* ---- A) List/Grid cards ----
+   Works for:
+   - <div class="veg-card" data-name="...">
+   - <div class="nonveg-grid ..."><div class="veg-card" data-name="...">
+   - <a class="feat-card"> with inner title <p class="feat-title"> or data-name
+*/
+document.querySelectorAll(".veg-card").forEach(card => {
+  const name = card.dataset.name?.trim();
+  addRibbon(card, name);
+});
+
+document.querySelectorAll(".feat-card").forEach(card => {
+  // Try data-name first, else read visible title text
+  const name = (card.dataset.name || card.querySelector(".feat-title")?.textContent || "").trim();
+  addRibbon(card, name);
+});
+
+/* ---- B) Product detail page (product.html) ---- */
+(() => {
+  const params = new URLSearchParams(location.search);
+  const name = params.get("name");
+  if (!name) return;
+
+  // Choose a stable container near the product image/title
+  // (adjust selector if your markup differs)
+  const hero =
+    document.querySelector("#product-image")?.parentElement ||
+    document.querySelector(".product-hero") ||
+    document.querySelector(".product-header");
+
+  addRibbon(hero, name);
+})();
+
+  
   // ─── 2. CART STORAGE HELPERS ───
   const CART_KEY       = "narmada_cart";
   const getCart        = () => JSON.parse(localStorage.getItem(CART_KEY)) || [];
@@ -205,7 +297,7 @@ document.addEventListener("DOMContentLoaded", () => {
         cart.push({ name, weight, price, qty: 1 });
         saveCart(cart);
         updateCartCount();
-        alert(`${name} (${weight}) added to cart!`);
+        showToast(`Added ${name} (${weight}) added to cart!`);
       });
       // click image/title → detail
       card.addEventListener("click", e => {
@@ -269,7 +361,7 @@ document.addEventListener("DOMContentLoaded", () => {
       cart.push({ name, weight: sel, price: data.prices[sel], qty });
       saveCart(cart);
       updateCartCount();
-      alert(`Added ${name} (${sel}) x${qty} to cart!`);
+      showToast(`Added ${name} (${sel}) x${qty} to cart!`);
     });
 
     // WhatsApp order link
@@ -283,7 +375,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // ─── 7. CART PAGE LOGIC (cart.html) ───
-  if (location.pathname.endsWith("cart.html")) {
+  if (document.getElementById("cart-items")) {
     const itemsEl    = document.getElementById("cart-items");
     const summary    = document.getElementById("cart-summary");
     const checkout   = document.getElementById("checkout-whatsapp");
